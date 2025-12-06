@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { Resend } from "resend";
 
 // Temporary logging to help diagnose production issues. Remove once stable.
 const log = (...args: unknown[]) =>
@@ -58,5 +59,27 @@ export async function POST(request: Request) {
   }
 
   log("Subscribed", { email });
+
+  // Optional: send notification email if Resend is configured.
+  const resendApiKey = process.env.RESEND_API_KEY;
+  const fromEmail = process.env.RESEND_FROM_EMAIL;
+  const notifyEmail = process.env.RESEND_NOTIFY_EMAIL;
+
+  if (resendApiKey && fromEmail && notifyEmail) {
+    try {
+      const resend = new Resend(resendApiKey);
+      await resend.emails.send({
+        from: fromEmail,
+        to: notifyEmail,
+        subject: "New newsletter subscriber",
+        text: `Email: ${email}${firstName ? `\nFirst name: ${firstName}` : ""}`,
+      });
+      log("Notification sent");
+    } catch (sendError) {
+      log("Notification send failed", sendError);
+      // Do not fail the signup on notification errors.
+    }
+  }
+
   return NextResponse.json({ success: true });
 }
