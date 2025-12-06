@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
+// Temporary logging to help diagnose production issues. Remove once stable.
+const log = (...args: unknown[]) =>
+  console.log("[newsletter-api]", ...args);
+
 const supabaseUrl =
   process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -12,6 +16,7 @@ type Body = {
 
 export async function POST(request: Request) {
   if (!supabaseUrl || !supabaseServiceKey) {
+    log("Missing Supabase envs", { supabaseUrlPresent: !!supabaseUrl });
     return NextResponse.json(
       { error: "Newsletter is not configured yet." },
       { status: 500 },
@@ -39,13 +44,19 @@ export async function POST(request: Request) {
     first_name: firstName || null,
   });
 
-  // If already subscribed, return success so users aren't blocked.
-  if (error && error.code !== "23505") {
+  if (error) {
+    // If already subscribed, return success so users aren't blocked.
+    if (error.code === "23505") {
+      log("Duplicate email", { email });
+      return NextResponse.json({ success: true });
+    }
+    log("Insert error", error);
     return NextResponse.json(
       { error: "Unable to subscribe right now. Please try again." },
       { status: 500 },
     );
   }
 
+  log("Subscribed", { email });
   return NextResponse.json({ success: true });
 }
