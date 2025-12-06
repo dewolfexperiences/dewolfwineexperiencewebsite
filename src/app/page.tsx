@@ -71,7 +71,7 @@ export default function Home() {
             <MotionP
               {...sectionAnimation}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-xl font-semibold text-brand-burgundy-900"
+              className="text-xl font-semibold text-slate-900"
             >
               The DeWolf Wine Experience is a wine and food culture podcast
               hosted by Halifax-based sommelier, writer and event creator Mark
@@ -83,7 +83,7 @@ export default function Home() {
             <MotionP
               {...sectionAnimation}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-lg leading-relaxed text-slate-700"
+              className="text-lg leading-relaxed text-slate-900"
             >
               For Mark, wine is not just a list of flavours or a score. It is an
               experience rooted in memory, culture and the connections we share
@@ -92,7 +92,7 @@ export default function Home() {
             <MotionP
               {...sectionAnimation}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-lg leading-relaxed text-slate-700"
+              className="text-lg leading-relaxed text-slate-900"
             >
               Each episode uncorks the people, places and traditions behind the
               bottles we love, from Nova Scotia and Atlantic Canada to classic

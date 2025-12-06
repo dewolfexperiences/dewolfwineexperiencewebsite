@@ -6,7 +6,7 @@ import "./globals.css";
 
 const socialLinks = [
   {
-    href: "https://www.instagram.com",
+    href: "https://www.instagram.com/thedewolfwineexperience",
     label: "Instagram",
     icon: (
       <svg
@@ -23,8 +23,8 @@ const socialLinks = [
     ),
   },
   {
-    href: "https://www.linkedin.com",
-    label: "LinkedIn",
+    href: "https://www.tiktok.com/@thedewolfwineexperience",
+    label: "TikTok",
     icon: (
       <svg
         width="20"
@@ -33,19 +33,9 @@ const socialLinks = [
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" />
         <path
-          d="M8.5 10.5V16"
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <circle cx="8.5" cy="8" r="1" fill="currentColor" />
-        <path
-          d="M12.5 16V12.5C12.5 11.3954 13.3954 10.5 14.5 10.5V10.5C15.6046 10.5 16.5 11.3954 16.5 12.5V16"
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+          d="M15 4h2c.1 1.2.7 2.2 1.7 2.9.5.3 1.1.5 1.8.6v2c-.9-.1-1.7-.3-2.5-.7a5.6 5.6 0 0 1-.9-.6v5.6A4.2 4.2 0 0 1 12.5 18C10.6 18 9 16.4 9 14.5c0-2 1.6-3.6 3.5-3.6.2 0 .4 0 .5.1v2a1.8 1.8 0 0 0-.5-.1 1.5 1.5 0 1 0 0 3c.8 0 1.5-.7 1.5-1.5V4Z"
+          fill="currentColor"
         />
       </svg>
     ),
@@ -100,18 +90,20 @@ export const metadata: Metadata = {
 function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center gap-3 font-semibold">
-          <Image
-            src="/dewolf-logo.svg"
-            alt="DeWolf Wine Experience"
-            width={160}
-            height={40}
-            className="h-10 w-auto"
-            priority
-          />
-        </Link>
-        <nav className="hidden items-center gap-6 text-sm font-medium text-slate-800 md:flex">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 gap-4">
+        <div className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3 font-semibold">
+            <Image
+              src="/dewolf-logo.svg"
+              alt="DeWolf Wine Experience"
+              width={160}
+              height={40}
+              className="h-10 w-auto"
+              priority
+            />
+          </Link>
+        </div>
+        <nav className="hidden items-center gap-6 text-sm font-medium text-slate-900 md:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -123,10 +115,28 @@ function SiteHeader() {
           ))}
           <Link
             href="/#listen"
-            className="rounded-full bg-brand-burgundy-800 px-4 py-2 text-white shadow-sm transition hover:bg-brand-burgundy-700"
+            className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-900 shadow-sm ring-1 ring-slate-200 transition hover:bg-brand-burgundy-50"
           >
             Listen
           </Link>
+          <div className="flex items-center gap-3 pl-3">
+            {socialLinks
+              .filter((item) =>
+                ["Instagram", "TikTok"].includes(item.label),
+              )
+              .map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 text-slate-700 transition hover:border-brand-burgundy-200 hover:bg-brand-burgundy-50"
+                  aria-label={item.label}
+                >
+                  {item.icon}
+                </a>
+              ))}
+          </div>
         </nav>
       </div>
     </header>
