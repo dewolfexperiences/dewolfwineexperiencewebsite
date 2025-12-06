@@ -287,52 +287,41 @@ export default function Home() {
         className="bg-white py-16 sm:py-20 md:py-24"
         aria-labelledby="hosted-by"
       >
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-[1fr,0.9fr] md:items-center">
-          <div className="space-y-4">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-700">
-              Host
-            </p>
-            <h2
-              id="hosted-by"
-              className="text-3xl font-bold text-slate-900 sm:text-4xl"
-            >
-              Hosted by Mark DeWolf
-            </h2>
-            <p className="text-lg text-slate-700">
-              Mark DeWolf is a Halifax based sommelier, writer, event creator
-              and travel host. A certified sommelier since 2001, he has been a
-              key figure in Canadian food and wine for more than twenty years,
-              mentoring young sommeliers and shaping national conversations
-              about wine and hospitality.
-            </p>
-            <p className="text-lg text-slate-700">
-              He is the creator of Eat Drink Halifax, owner of DeWolf Food &amp;
-              Wine Experiences, co founder of the Halifax International Wine
-              Festival and a former national president of the Canadian
-              Association of Professional Sommeliers. He also serves as Content
-              Manager and Editor for the Association de la Sommellerie
-              Internationale.
-            </p>
-            <p className="text-lg text-slate-700">
-              His philosophy is simple: make wine welcoming and unpretentious,
-              and help people find what they actually enjoy.
-            </p>
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-rose-700"
-            >
-              Learn more about Mark
-            </Link>
-          </div>
-          <div className="relative overflow-hidden rounded-3xl bg-white shadow-2xl ring-1 ring-slate-200">
-            <Image
-              src="/dewolf-logo.png"
-              alt="DeWolf Wine Experience logo"
-              width={640}
-              height={480}
-              className="h-full w-full object-contain bg-slate-50 p-10"
-            />
-          </div>
+        <div className="mx-auto max-w-4xl space-y-4 px-6">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-700">
+            Host
+          </p>
+          <h2
+            id="hosted-by"
+            className="text-3xl font-bold text-slate-900 sm:text-4xl"
+          >
+            Hosted by Mark DeWolf
+          </h2>
+          <p className="text-lg text-slate-700">
+            Mark DeWolf is a Halifax based sommelier, writer, event creator and
+            travel host. A certified sommelier since 2001, he has been a key
+            figure in Canadian food and wine for more than twenty years,
+            mentoring young sommeliers and shaping national conversations about
+            wine and hospitality.
+          </p>
+          <p className="text-lg text-slate-700">
+            He is the creator of Eat Drink Halifax, owner of DeWolf Food &amp;
+            Wine Experiences, co founder of the Halifax International Wine
+            Festival and a former national president of the Canadian
+            Association of Professional Sommeliers. He also serves as Content
+            Manager and Editor for the Association de la Sommellerie
+            Internationale.
+          </p>
+          <p className="text-lg text-slate-700">
+            His philosophy is simple: make wine welcoming and unpretentious, and
+            help people find what they actually enjoy.
+          </p>
+          <Link
+            href="/about"
+            className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-rose-700"
+          >
+            Learn more about Mark
+          </Link>
         </div>
       </section>
 
