@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { MotionDiv } from "./components/motion";
+import { MotionDiv } from "../components/motion";
 
 export const metadata: Metadata = {
   title: "About Mark DeWolf | DeWolf Wine Experience Podcast",
