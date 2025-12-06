@@ -48,11 +48,12 @@ export default function Home() {
     <>
       <section
         id="listen"
-        className="relative overflow-hidden bg-gradient-to-br from-brand-burgundy-50 via-white to-brand-gold-50"
+        className="relative overflow-hidden bg-white"
       >
-        <div className="absolute inset-0 opacity-40">
-          <div className="absolute -left-16 top-0 h-64 w-64 rounded-full bg-brand-burgundy-200 blur-3xl" />
-          <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-brand-gold-200 blur-3xl" />
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-brand-gold-50 opacity-90" />
+          <div className="absolute -left-24 top-8 h-80 w-80 rounded-full bg-brand-gold-100/60 blur-3xl" />
+          <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-brand-burgundy-100/50 blur-3xl" />
         </div>
         <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 md:grid-cols-[1.2fr,1fr] md:py-20">
           <MotionDiv {...sectionAnimation} className="space-y-6">
@@ -421,8 +422,8 @@ export default function Home() {
           </div>
           <div className="relative overflow-hidden rounded-3xl bg-white shadow-xl ring-1 ring-brand-gold-100">
             <Image
-              src="/mark-duoro.jpg"
-              alt="Wine experience in the Douro Valley"
+              src="/mark-experiences.jpg"
+              alt="Wine experience at DeWolf Food & Wine"
               width={640}
               height={480}
               className="h-full w-full object-cover"
