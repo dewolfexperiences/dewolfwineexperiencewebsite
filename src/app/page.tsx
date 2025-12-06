@@ -120,7 +120,7 @@ export default function Home() {
           </div>
           <div className="relative">
             <div className="absolute -left-8 -top-8 h-24 w-24 rounded-full bg-white/60 shadow-lg" />
-            <div className="relative mx-auto max-w-[520px] overflow-hidden rounded-3xl bg-white/60 shadow-2xl ring-1 ring-rose-100 sm:max-w-[560px]">
+            <div className="relative mx-auto max-w-[480px] overflow-hidden rounded-3xl bg-white/60 shadow-2xl ring-1 ring-rose-100 sm:max-w-[520px]">
               <div className="relative aspect-[4/5]">
                 <Image
                   src="/mark-profile.jpg"
