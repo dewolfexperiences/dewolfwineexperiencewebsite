@@ -137,7 +137,7 @@ function SiteFooter() {
   return (
     <footer className="border-t border-slate-200 bg-white">
       <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="grid gap-8 md:grid-cols-[1.3fr,1fr,1fr]">
+        <div className="grid gap-10 md:grid-cols-[1.3fr,1fr,1fr]">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <Image
@@ -148,7 +148,7 @@ function SiteFooter() {
                 className="h-10 w-auto"
               />
             </div>
-            <p className="text-sm text-slate-600">
+            <p className="text-sm text-slate-600 leading-relaxed">
               DeWolf Wine Experience is recorded in Halifax, Nova Scotia and
               available wherever you get your podcasts.
             </p>
@@ -168,11 +168,11 @@ function SiteFooter() {
             </div>
           </div>
 
-          <div className="space-y-3">
-            <h3 className="text-sm font-semibold uppercase tracking-[0.15em] text-slate-700">
+          <div className="space-y-4">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-700">
               Explore
             </h3>
-            <div className="grid grid-cols-2 gap-2 text-sm font-medium text-slate-800">
+            <div className="grid grid-cols-2 gap-y-2 text-sm font-medium text-slate-800">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -185,8 +185,8 @@ function SiteFooter() {
             </div>
           </div>
 
-          <div className="space-y-3">
-            <h3 className="text-sm font-semibold uppercase tracking-[0.15em] text-slate-700">
+          <div className="space-y-4">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-700">
               Legal
             </h3>
             <div className="flex flex-col gap-2 text-sm font-medium text-slate-800">
