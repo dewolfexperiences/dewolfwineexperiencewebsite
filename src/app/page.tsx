@@ -120,15 +120,17 @@ export default function Home() {
           </div>
           <div className="relative">
             <div className="absolute -left-8 -top-8 h-24 w-24 rounded-full bg-white/60 shadow-lg" />
-            <div className="relative overflow-hidden rounded-3xl bg-white/60 shadow-2xl ring-1 ring-rose-100">
-              <Image
-                src="/mark-profile.jpg"
-                alt="Sommelier Mark DeWolf enjoying wine in Halifax"
-                width={640}
-                height={760}
-                className="h-full w-full object-cover"
-                priority
-              />
+            <div className="relative mx-auto max-w-[520px] overflow-hidden rounded-3xl bg-white/60 shadow-2xl ring-1 ring-rose-100 sm:max-w-[560px]">
+              <div className="relative aspect-[4/5]">
+                <Image
+                  src="/mark-profile.jpg"
+                  alt="Sommelier Mark DeWolf enjoying wine in Halifax"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 520px, (min-width: 640px) 480px, 90vw"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>
