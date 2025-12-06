@@ -78,7 +78,6 @@ export default function AboutPage() {
       </section>
 
       <MotionDiv
-        as="section"
         {...sectionAnimation}
         transition={{ duration: 0.5, delay: 0.2 }}
         className="border-b border-slate-200 bg-white py-16 sm:py-20 md:py-24"
