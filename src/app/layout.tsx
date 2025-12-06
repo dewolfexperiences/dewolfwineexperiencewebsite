@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -11,6 +12,11 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair-display",
   subsets: ["latin"],
 });
 
@@ -47,14 +53,14 @@ function SiteHeader() {
             <Link
               key={link.href}
               href={link.href}
-              className="transition hover:text-rose-600"
+              className="transition hover:text-brand-burgundy-700"
             >
               {link.label}
             </Link>
           ))}
           <Link
             href="/#listen"
-            className="rounded-full bg-rose-600 px-4 py-2 text-white shadow-sm transition hover:bg-rose-500"
+            className="rounded-full bg-brand-burgundy-800 px-4 py-2 text-white shadow-sm transition hover:bg-brand-burgundy-700"
           >
             Listen
           </Link>
@@ -86,7 +92,7 @@ function SiteFooter() {
             <Link
               key={link.href}
               href={link.href}
-              className="transition hover:text-rose-600"
+              className="transition hover:text-brand-burgundy-700"
             >
               {link.label}
             </Link>
@@ -105,7 +111,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-slate-50 text-slate-900 antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} bg-brand-burgundy-50 font-sans text-slate-900 antialiased`}
       >
         <SiteHeader />
         <main className="min-h-screen">{children}</main>
