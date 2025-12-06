@@ -61,13 +61,14 @@ export function NewsletterForm() {
           htmlFor="name"
           className="block text-sm font-semibold text-slate-800"
         >
-          First name (optional)
+          First name
         </label>
         <input
           id="name"
           name="name"
           type="text"
           placeholder="First name"
+          required
           value={firstName}
           onChange={(event) => setFirstName(event.target.value)}
           className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 shadow-sm transition focus:border-brand-burgundy-400 focus:outline-none focus:ring-2 focus:ring-brand-burgundy-100"
@@ -100,7 +101,7 @@ export function NewsletterForm() {
       </button>
       {status === "success" ? (
         <p className="text-sm font-semibold text-green-700">
-          You&apos;re in! Check your inbox for updates.
+          You&apos;re in! Check your inbox for updates. Cheers!
         </p>
       ) : null}
       {status === "error" && error ? (

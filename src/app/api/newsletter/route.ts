@@ -83,11 +83,43 @@ export async function POST(request: Request) {
     // Send a simple welcome email to the subscriber.
     try {
       const resend = new Resend(resendApiKey);
+      const safeName = firstName || "there";
+      const logoUrl =
+        "https://www.thedewolfwineexperience.com/dewolf-logo.png";
       await resend.emails.send({
         from: fromEmail,
         to: email,
         subject: "Welcome to DeWolf Wine Experience",
-        text: `Thanks for joining the DeWolf Wine Experience newsletter${firstName ? `, ${firstName}` : ""}.\n\nYou'll get updates on new episodes, events, and travel ideas.\n\nCheers,\nDeWolf Wine Experience`,
+        text: `Hi ${safeName},\n\nThanks for joining the DeWolf Wine Experience newsletter. You’ll get updates on new episodes, events, and travel ideas.\n\nCheers,\nMark DeWolf`,
+        html: `<table width="100%" cellpadding="0" cellspacing="0" style="background:#f7f7f5;padding:24px 0;font-family:'Helvetica Neue',Arial,sans-serif;">
+  <tr>
+    <td align="center">
+      <table width="640" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:16px;padding:32px;box-shadow:0 8px 32px rgba(0,0,0,0.05);">
+        <tr>
+          <td align="center" style="padding-bottom:24px;">
+            <img src="${logoUrl}" alt="DeWolf Wine Experience" width="160" style="display:block;max-width:160px;height:auto;">
+          </td>
+        </tr>
+        <tr>
+          <td style="font-size:18px;color:#0f172a;font-weight:600;padding-bottom:12px;">
+            Hi ${safeName},
+          </td>
+        </tr>
+        <tr>
+          <td style="font-size:16px;color:#334155;line-height:1.6;padding-bottom:20px;">
+            Thanks for joining the DeWolf Wine Experience newsletter. You’ll get updates on new podcast episodes, events, and travel ideas—always focused on wine, food, and hospitality.
+          </td>
+        </tr>
+        <tr>
+          <td style="font-size:16px;color:#334155;line-height:1.6;padding-bottom:24px;">
+            Cheers,<br>
+            Mark DeWolf
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>`,
       });
       log("Welcome email sent");
     } catch (sendError) {
