@@ -130,10 +130,10 @@ export function NewsletterForm() {
           LinkedIn
         </a>
         <a
-          href="mailto:info@dewolfwineexperience.com"
+          href="mailto:info@thedewolfwineexperience.com"
           className="rounded-full bg-white px-4 py-2 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-[1px] hover:shadow"
         >
-          info@dewolfwineexperience.com
+          info@thedewolfwineexperience.com
         </a>
       </div>
     </form>

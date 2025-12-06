@@ -65,25 +65,28 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="font-serif text-4xl font-bold leading-tight tracking-tight text-slate-900 md:text-5xl"
             >
-              DeWolf Wine Experience Podcast
+              The DeWolf Wine Experience Podcast
             </MotionH1>
             <MotionP
               {...sectionAnimation}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-xl font-semibold text-brand-burgundy-900"
             >
-              A wine and food culture podcast with sommelier Mark DeWolf
+              The DeWolf Wine Experience is a wine and food culture podcast
+              hosted by Halifax-based sommelier, writer and event creator Mark
+              DeWolf. For more than two decades he has helped shape how
+              Canadians experience food and wine through Eat Drink Halifax,
+              DeWolf Food &amp; Wine Experiences and the Halifax International
+              Wine Festival.
             </MotionP>
             <MotionP
               {...sectionAnimation}
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-lg leading-relaxed text-slate-700"
             >
-              DeWolf Wine Experience is a wine and food culture podcast hosted
-              by Halifax based sommelier, writer and event creator Mark DeWolf.
-              For more than two decades he has helped shape how Canadians
-              experience food and wine through Eat Drink Halifax, DeWolf Food &
-              Wine Experiences and the Halifax International Wine Festival.
+              For Mark, wine is not just a list of flavours or a score. It is an
+              experience rooted in memory, culture and the connections we share
+              around the table.
             </MotionP>
             <MotionP
               {...sectionAnimation}
@@ -280,12 +283,12 @@ export default function Home() {
                 What the podcast is about
               </p>
               <h2 className="font-serif text-3xl font-bold leading-tight sm:text-4xl">
-                What you will hear on DeWolf Wine Experience
+                What you will hear on The DeWolf Wine Experience
               </h2>
               <p className="text-lg text-slate-200">
-                DeWolf Wine Experience is for curious wine drinkers,
+                The DeWolf Wine Experience is for curious wine drinkers,
                 hospitality professionals and anyone who loves the intersection
-                of wine, food and travel.
+                of wine, food, and travel.
               </p>
               <ul className="space-y-4 text-base text-slate-100">
                 <li>
@@ -293,7 +296,7 @@ export default function Home() {
                     Wine regions and terroir:
                   </span>{" "}
                   conversations with winemakers, sommeliers and producers from
-                  Nova Scotia, Europe, North America and beyond, with focus on
+                  Nova Scotia, Europe, North America and beyond, with a focus on
                   place and climate.
                 </li>
                 <li>
@@ -316,8 +319,8 @@ export default function Home() {
                     Travel and experiences:
                   </span>{" "}
                   stories from DeWolf Food &amp; Wine Experiences trips, Eat
-                  Drink Halifax collaborations, and festivals like the Halifax
-                  International Wine Festival.
+                  Drink Halifax collaborations, and festivals such as the
+                  Halifax International Wine Festival.
                 </li>
               </ul>
             </div>
@@ -353,19 +356,11 @@ export default function Home() {
             Hosted by Mark DeWolf
           </h2>
           <p className="text-lg text-slate-700">
-            Mark DeWolf is a Halifax based sommelier, writer, event creator and
-            travel host. A certified sommelier since 2001, he has been a key
-            figure in Canadian food and wine for more than twenty years,
-            mentoring young sommeliers and shaping national conversations about
-            wine and hospitality.
-          </p>
-          <p className="text-lg text-slate-700">
-            He is the creator of Eat Drink Halifax, owner of DeWolf Food &amp;
-            Wine Experiences, co founder of the Halifax International Wine
-            Festival and a former national president of the Canadian
-            Association of Professional Sommeliers. He also serves as Content
-            Manager and Editor for the Association de la Sommellerie
-            Internationale.
+            Mark DeWolf is a Halifax-based sommelier, writer, event creator and
+            travel host. He is the creator of Eat Drink Halifax, owner of DeWolf
+            Food &amp; Wine Experiences, co-founder of the Halifax International
+            Wine Festival and a former national president of the Canadian
+            Association of Professional Sommeliers.
           </p>
           <p className="text-lg text-slate-700">
             His philosophy is simple: make wine welcoming and unpretentious, and
