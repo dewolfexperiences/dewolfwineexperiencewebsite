@@ -7,6 +7,7 @@ import {
   MotionP,
   MotionSection,
 } from "./components/motion";
+import { NewsletterForm } from "./components/NewsletterForm";
 
 const featuredEpisodes = [
   {
@@ -464,74 +465,7 @@ export default function Home() {
                   Available on Apple Podcasts, Spotify and all major platforms.
                 </p>
               </div>
-              <form className="space-y-4">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-semibold text-slate-800"
-                  >
-                    First name (optional)
-                  </label>
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    placeholder="First name"
-                    className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 shadow-sm transition focus:border-brand-burgundy-400 focus:outline-none focus:ring-2 focus:ring-brand-burgundy-100"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-semibold text-slate-800"
-                  >
-                    Email
-                  </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    placeholder="you@example.com"
-                    className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 shadow-sm transition focus:border-brand-burgundy-400 focus:outline-none focus:ring-2 focus:ring-brand-burgundy-100"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full rounded-full bg-slate-900 px-6 py-3 text-base font-semibold text-white transition hover:bg-brand-burgundy-800"
-                >
-                  Join the list
-                </button>
-                <div className="flex items-center gap-3 text-sm text-slate-600">
-                  <div className="h-px flex-1 bg-slate-200" />
-                  <span>or</span>
-                  <div className="h-px flex-1 bg-slate-200" />
-                </div>
-                <div className="flex flex-wrap gap-3 text-sm font-semibold text-brand-burgundy-800">
-                  <Link
-                    href="https://www.instagram.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="rounded-full bg-white px-4 py-2 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-[1px] hover:shadow"
-                  >
-                    Instagram
-                  </Link>
-                  <Link
-                    href="https://www.linkedin.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="rounded-full bg-white px-4 py-2 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-[1px] hover:shadow"
-                  >
-                    LinkedIn
-                  </Link>
-                  <Link
-                    href="mailto:info@dewolfwineexperience.com"
-                    className="rounded-full bg-white px-4 py-2 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-[1px] hover:shadow"
-                  >
-                    info@dewolfwineexperience.com
-                  </Link>
-                </div>
-              </form>
+              <NewsletterForm />
             </div>
           </div>
         </div>
