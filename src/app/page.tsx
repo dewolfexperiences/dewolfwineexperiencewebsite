@@ -43,24 +43,6 @@ export default function Home() {
         </div>
         <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 md:grid-cols-[1.2fr,1fr] md:py-20">
           <div className="space-y-6">
-            <div className="rounded-2xl border border-rose-100 bg-white/80 p-4 shadow-lg shadow-rose-100 ring-1 ring-rose-100 backdrop-blur">
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-rose-700">
-                New season now streaming
-              </p>
-              <div className="mt-2 flex flex-wrap items-center justify-between gap-3">
-                <p className="text-base font-semibold text-slate-900">
-                  Atlantic Canada in the glass: sparkling, seafood, and stories
-                  from the coast.
-                </p>
-                <Link
-                  href="#episodes"
-                  className="inline-flex items-center gap-2 rounded-full bg-rose-600 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-rose-200 transition hover:bg-rose-500"
-                >
-                  Start season 2
-                  <span aria-hidden>→</span>
-                </Link>
-              </div>
-            </div>
             <div className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-rose-700">
               <span className="h-[2px] w-8 bg-rose-600" />
               Wine, Food, Hospitality
