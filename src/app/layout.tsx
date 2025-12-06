@@ -4,6 +4,70 @@ import Link from "next/link";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
+const socialLinks = [
+  {
+    href: "https://www.instagram.com",
+    label: "Instagram",
+    icon: (
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" />
+        <circle cx="12" cy="12" r="4" stroke="currentColor" />
+        <circle cx="17" cy="7" r="1.25" fill="currentColor" />
+      </svg>
+    ),
+  },
+  {
+    href: "https://www.linkedin.com",
+    label: "LinkedIn",
+    icon: (
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" />
+        <path
+          d="M8.5 10.5V16"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <circle cx="8.5" cy="8" r="1" fill="currentColor" />
+        <path
+          d="M12.5 16V12.5C12.5 11.3954 13.3954 10.5 14.5 10.5V10.5C15.6046 10.5 16.5 11.3954 16.5 12.5V16"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    href: "mailto:info@thedewolfwineexperience.com",
+    label: "Email",
+    icon: (
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" />
+        <path d="M4 7l7.447 4.468a2 2 0 0 0 2.106 0L21 7" stroke="currentColor" />
+      </svg>
+    ),
+  },
+];
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -72,30 +136,92 @@ function SiteHeader() {
 function SiteFooter() {
   return (
     <footer className="border-t border-slate-200 bg-white">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-10 md:flex-row md:items-center md:justify-between">
-        <div className="flex items-center gap-3">
-          <Image
-            src="/dewolf-logo.svg"
-            alt="DeWolf Wine Experience"
-            width={140}
-            height={36}
-            className="h-9 w-auto"
-          />
-          <p className="text-sm text-slate-600">
-            DeWolf Wine Experience is recorded in Halifax, Nova Scotia and
-            available wherever you get your podcasts.
-          </p>
+      <div className="mx-auto max-w-6xl px-6 py-12">
+        <div className="grid gap-8 md:grid-cols-[1.3fr,1fr,1fr]">
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <Image
+                src="/dewolf-logo.svg"
+                alt="DeWolf Wine Experience"
+                width={160}
+                height={40}
+                className="h-10 w-auto"
+              />
+            </div>
+            <p className="text-sm text-slate-600">
+              DeWolf Wine Experience is recorded in Halifax, Nova Scotia and
+              available wherever you get your podcasts.
+            </p>
+            <div className="flex flex-wrap items-center gap-3 text-sm text-slate-700">
+              {socialLinks.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 rounded-full border border-slate-200 px-3 py-2 transition hover:border-brand-burgundy-200 hover:bg-brand-burgundy-50"
+                >
+                  <span className="text-slate-700">{item.icon}</span>
+                  <span>{item.label}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-3">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.15em] text-slate-700">
+              Explore
+            </h3>
+            <div className="grid grid-cols-2 gap-2 text-sm font-medium text-slate-800">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="transition hover:text-brand-burgundy-700"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-3">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.15em] text-slate-700">
+              Legal
+            </h3>
+            <div className="flex flex-col gap-2 text-sm font-medium text-slate-800">
+              <Link
+                href="/privacy-policy"
+                className="transition hover:text-brand-burgundy-700"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/terms-of-service"
+                className="transition hover:text-brand-burgundy-700"
+              >
+                Terms of Service
+              </Link>
+              <Link
+                href="/cookie-policy"
+                className="transition hover:text-brand-burgundy-700"
+              >
+                Cookie Policy
+              </Link>
+              <a
+                href="mailto:info@thedewolfwineexperience.com"
+                className="transition hover:text-brand-burgundy-700"
+              >
+                info@thedewolfwineexperience.com
+              </a>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-wrap items-center gap-4 text-sm font-medium text-slate-800">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="transition hover:text-brand-burgundy-700"
-            >
-              {link.label}
-            </Link>
-          ))}
+        <div className="mt-10 border-t border-slate-200 pt-6 text-sm text-slate-600">
+          <p>
+            &copy; {new Date().getFullYear()} DeWolf Wine Experience. All rights
+            reserved.
+          </p>
         </div>
       </div>
     </footer>
