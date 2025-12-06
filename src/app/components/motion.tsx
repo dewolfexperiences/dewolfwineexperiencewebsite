@@ -7,3 +7,4 @@ export const MotionH1 = motion.h1;
 export const MotionP = motion.p;
 export const MotionA = motion.a;
 export const MotionArticle = motion.article;
+export const MotionSection = motion.section;

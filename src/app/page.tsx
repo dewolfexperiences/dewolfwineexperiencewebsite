@@ -5,6 +5,7 @@ import {
   MotionDiv,
   MotionH1,
   MotionP,
+  MotionSection,
 } from "./components/motion";
 
 const featuredEpisodes = [
@@ -175,8 +176,7 @@ export default function Home() {
         </div>
       </section>
 
-      <MotionDiv
-        as="section"
+      <MotionSection
         {...sectionAnimation}
         transition={{ duration: 0.5, delay: 0.1 }}
         className="border-b border-slate-200 bg-white py-6"
@@ -197,10 +197,9 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </MotionDiv>
+      </MotionSection>
 
-      <MotionDiv
-        as="section"
+      <MotionSection
         id="episodes"
         {...sectionAnimation}
         transition={{ duration: 0.5, delay: 0.2 }}
@@ -266,10 +265,9 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </MotionDiv>
+      </MotionSection>
 
-      <MotionDiv
-        as="section"
+      <MotionSection
         {...sectionAnimation}
         transition={{ duration: 0.5, delay: 0.3 }}
         className="bg-slate-900 py-16 text-white sm:py-20 md:py-24"
@@ -334,10 +332,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </MotionDiv>
+      </MotionSection>
 
-      <MotionDiv
-        as="section"
+      <MotionSection
         id="about"
         {...sectionAnimation}
         transition={{ duration: 0.5, delay: 0.4 }}
@@ -380,10 +377,9 @@ export default function Home() {
             Learn more about Mark
           </Link>
         </div>
-      </MotionDiv>
+      </MotionSection>
 
-      <MotionDiv
-        as="section"
+      <MotionSection
         id="experiences"
         {...sectionAnimation}
         transition={{ duration: 0.5, delay: 0.5 }}
@@ -438,10 +434,9 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-t from-brand-gold-200/40 to-transparent" />
           </div>
         </div>
-      </MotionDiv>
+      </MotionSection>
 
-      <MotionDiv
-        as="section"
+      <MotionSection
         id="contact"
         {...sectionAnimation}
         transition={{ duration: 0.5, delay: 0.6 }}
@@ -540,7 +535,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </MotionDiv>
+      </MotionSection>
     </>
   );
 }
