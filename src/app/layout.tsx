@@ -137,18 +137,18 @@ function SiteFooter() {
   return (
     <footer className="border-t border-slate-200 bg-white">
       <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="grid gap-10 md:grid-cols-[1.3fr,1fr,1fr]">
-          <div className="space-y-4">
+        <div className="grid gap-12 md:grid-cols-4">
+          <div className="space-y-4 md:col-span-1">
             <div className="flex items-center gap-3">
               <Image
                 src="/dewolf-logo.svg"
                 alt="DeWolf Wine Experience"
-                width={160}
-                height={40}
-                className="h-10 w-auto"
+                width={180}
+                height={44}
+                className="h-11 w-auto"
               />
             </div>
-            <p className="text-sm text-slate-600 leading-relaxed">
+            <p className="text-sm text-slate-600 leading-relaxed max-w-sm">
               DeWolf Wine Experience is recorded in Halifax, Nova Scotia and
               available wherever you get your podcasts.
             </p>
@@ -170,24 +170,59 @@ function SiteFooter() {
 
           <div className="space-y-4">
             <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-700">
-              Explore
+              Episodes &amp; Experiences
             </h3>
-            <div className="grid grid-cols-2 gap-y-2 text-sm font-medium text-slate-800">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="transition hover:text-brand-burgundy-700"
-                >
-                  {link.label}
-                </Link>
-              ))}
+            <div className="flex flex-col gap-2 text-sm font-medium text-slate-800">
+              <Link
+                href="/#episodes"
+                className="transition hover:text-brand-burgundy-700"
+              >
+                Episodes
+              </Link>
+              <Link
+                href="/#experiences"
+                className="transition hover:text-brand-burgundy-700"
+              >
+                Experiences
+              </Link>
+              <Link
+                href="/#listen"
+                className="transition hover:text-brand-burgundy-700"
+              >
+                Where to listen
+              </Link>
             </div>
           </div>
 
           <div className="space-y-4">
             <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-700">
-              Legal
+              About
+            </h3>
+            <div className="flex flex-col gap-2 text-sm font-medium text-slate-800">
+              <Link
+                href="/about"
+                className="transition hover:text-brand-burgundy-700"
+              >
+                About Mark
+              </Link>
+              <Link
+                href="/#contact"
+                className="transition hover:text-brand-burgundy-700"
+              >
+                Contact
+              </Link>
+              <a
+                href="mailto:info@thedewolfwineexperience.com"
+                className="transition hover:text-brand-burgundy-700"
+              >
+                info@thedewolfwineexperience.com
+              </a>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-700">
+              Policies
             </h3>
             <div className="flex flex-col gap-2 text-sm font-medium text-slate-800">
               <Link
@@ -208,20 +243,29 @@ function SiteFooter() {
               >
                 Cookie Policy
               </Link>
-              <a
-                href="mailto:info@thedewolfwineexperience.com"
-                className="transition hover:text-brand-burgundy-700"
-              >
-                info@thedewolfwineexperience.com
-              </a>
             </div>
           </div>
         </div>
-        <div className="mt-10 border-t border-slate-200 pt-6 text-sm text-slate-600">
+
+        <div className="mt-12 flex flex-col gap-4 border-t border-slate-200 pt-6 text-sm text-slate-600 md:flex-row md:items-center md:justify-between">
           <p>
             &copy; {new Date().getFullYear()} DeWolf Wine Experience. All rights
             reserved.
           </p>
+          <div className="flex flex-wrap items-center gap-3 text-sm text-slate-700">
+            {socialLinks.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 rounded-full border border-slate-200 px-3 py-2 transition hover:border-brand-burgundy-200 hover:bg-brand-burgundy-50"
+              >
+                <span className="text-slate-700">{item.icon}</span>
+                <span>{item.label}</span>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </footer>
