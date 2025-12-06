@@ -42,7 +42,7 @@ export default function Home() {
   const sectionAnimation = {
     initial: { opacity: 0, y: 20 },
     whileInView: { opacity: 1, y: 0 },
-    transition: { duration: 0.5 },
+    transition: { duration: 0.35 },
   };
   return (
     <>
@@ -379,8 +379,8 @@ export default function Home() {
       <MotionSection
         id="experiences"
         {...sectionAnimation}
-        transition={{ duration: 0.5, delay: 0.5 }}
-        className="bg-brand-gold-50 py-16 sm:py-20 md:py-24"
+        transition={{ duration: 0.35, delay: 0.4 }}
+        className="bg-white py-16 sm:py-20 md:py-24"
         aria-labelledby="experiences-title"
       >
         <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-[1fr,0.9fr] md:items-center">
@@ -428,7 +428,7 @@ export default function Home() {
               height={480}
               className="h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-gold-200/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent" />
           </div>
         </div>
       </MotionSection>
