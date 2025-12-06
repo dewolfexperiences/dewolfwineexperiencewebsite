@@ -79,6 +79,20 @@ export async function POST(request: Request) {
       log("Notification send failed", sendError);
       // Do not fail the signup on notification errors.
     }
+
+    // Send a simple welcome email to the subscriber.
+    try {
+      const resend = new Resend(resendApiKey);
+      await resend.emails.send({
+        from: fromEmail,
+        to: email,
+        subject: "Welcome to DeWolf Wine Experience",
+        text: `Thanks for joining the DeWolf Wine Experience newsletter${firstName ? `, ${firstName}` : ""}.\n\nYou'll get updates on new episodes, events, and travel ideas.\n\nCheers,\nDeWolf Wine Experience`,
+      });
+      log("Welcome email sent");
+    } catch (sendError) {
+      log("Welcome email send failed", sendError);
+    }
   }
 
   return NextResponse.json({ success: true });
