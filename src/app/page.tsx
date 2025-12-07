@@ -367,12 +367,12 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="relative overflow-hidden rounded-3xl bg-white shadow-2xl">
+          <div className="relative overflow-hidden rounded-3xl bg-white shadow-2xl aspect-[4/3]">
             <Image
               src="/mark-itc.jpg"
               alt="Mark DeWolf leading a tasting at the International Tasting Centre"
-              width={640}
-              height={480}
+              width={900}
+              height={675}
               className="h-full w-full object-cover"
             />
           </div>
