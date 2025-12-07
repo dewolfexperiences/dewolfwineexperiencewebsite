@@ -129,7 +129,6 @@ export default function Home() {
             </div>
           </div>
           <div className="relative">
-            <div className="absolute -left-8 -top-8 h-24 w-24 rounded-full bg-white/60 shadow-lg" />
             <div className="relative mx-auto max-w-[380px] overflow-hidden rounded-3xl bg-white/60 shadow-2xl ring-1 ring-brand-burgundy-100 sm:max-w-[420px] lg:max-w-[460px]">
               <div className="relative aspect-[4/5]">
                 <Image
