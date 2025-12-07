@@ -169,6 +169,66 @@ function SiteHeader() {
           </div>
         </nav>
       </div>
+      <div className="mx-auto block max-w-6xl px-6 pb-4 md:hidden">
+        <details className="w-full rounded-2xl border border-slate-200 bg-white/90 px-4 py-3 shadow-sm backdrop-blur">
+          <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-semibold text-slate-900 [&::-webkit-details-marker]:hidden">
+            Menu
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              className="text-slate-800"
+            >
+              <path
+                d="M4 7h16M4 12h16M4 17h10"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
+            </svg>
+          </summary>
+          <div className="mt-3 space-y-3 text-sm font-medium text-slate-900">
+            <div className="grid gap-2">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="rounded-xl px-3 py-2 transition hover:bg-brand-burgundy-50"
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <Link
+                href="/#listen"
+                className="inline-flex items-center justify-center rounded-full bg-slate-900 px-4 py-2 text-white transition hover:bg-brand-burgundy-800"
+              >
+                Listen
+              </Link>
+            </div>
+            <div className="flex flex-wrap items-center gap-3">
+              {["TikTok", "YouTube", "Instagram"].map((label) => {
+                const item = socialLinks.find((link) => link.label === label);
+                if (!item) return null;
+                return (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-700 transition hover:border-brand-burgundy-200 hover:bg-brand-burgundy-50"
+                    aria-label={item.label}
+                  >
+                    {item.icon}
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        </details>
+      </div>
     </header>
   );
 }
