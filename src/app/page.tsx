@@ -73,7 +73,12 @@ export default function Home() {
             <div className="flex flex-wrap items-center gap-3">
               <Link
                 href="#listen"
-                className="rounded-full bg-brand-burgundy-800 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-brand-burgundy-200 transition hover:bg-brand-burgundy-700"
+                className="rounded-full px-6 py-3 text-base font-semibold text-white shadow-lg shadow-brand-burgundy-200 transition hover:-translate-y-[1px]"
+                style={{
+                  backgroundColor: "#8b3030",
+                  boxShadow:
+                    "0 10px 25px -10px rgba(139, 48, 48, 0.45), 0 10px 50px -12px rgba(139, 48, 48, 0.35)",
+                }}
               >
                 Listen to the podcast
               </Link>
