@@ -277,7 +277,7 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            <div className="relative overflow-hidden rounded-3xl bg-white shadow-2xl ring-1 ring-slate-200">
+            <div className="relative overflow-hidden rounded-3xl bg-white shadow-2xl">
               <Image
                 src="/mark-duoro.jpg"
                 alt="Mark DeWolf visiting a vineyard in the Douro Valley"
@@ -285,7 +285,6 @@ export default function Home() {
                 height={560}
                 className="h-full w-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-white/70 to-transparent" />
             </div>
           </div>
         </div>
@@ -368,15 +367,14 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="relative overflow-hidden rounded-3xl bg-white shadow-xl ring-1 ring-brand-gold-100">
+          <div className="relative overflow-hidden rounded-3xl bg-white shadow-2xl">
             <Image
-              src="/mark-experiences.jpg"
-              alt="Wine experience at DeWolf Food & Wine"
+              src="/mark-itc.jpg"
+              alt="Mark DeWolf leading a tasting at the International Tasting Centre"
               width={640}
               height={480}
               className="h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent" />
           </div>
         </div>
       </section>
