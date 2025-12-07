@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { MotionDiv } from "../components/motion";
 
 export const metadata: Metadata = {
   title: "About Mark DeWolf | DeWolf Wine Experience Podcast",
@@ -10,12 +9,6 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  const sectionAnimation = {
-    initial: { opacity: 0, y: 20 },
-    whileInView: { opacity: 1, y: 0 },
-    transition: { duration: 0.5 },
-  };
-
   return (
     <div className="bg-white">
       <section className="relative overflow-hidden bg-gradient-to-br from-brand-burgundy-50 via-white to-brand-gold-50">
@@ -24,7 +17,7 @@ export default function AboutPage() {
           <div className="absolute bottom-0 right-0 h-64 w-64 rounded-full bg-brand-gold-200 blur-3xl" />
         </div>
         <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 md:grid-cols-[1.15fr,0.85fr] md:py-20">
-          <MotionDiv {...sectionAnimation} className="space-y-6">
+          <div className="space-y-6">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-burgundy-800">
               About Mark DeWolf
             </p>
@@ -57,12 +50,8 @@ export default function AboutPage() {
                 Join the newsletter
               </Link>
             </div>
-          </MotionDiv>
-          <MotionDiv
-            {...sectionAnimation}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="relative mx-auto max-w-[420px] overflow-hidden rounded-3xl bg-white/70 shadow-2xl ring-1 ring-brand-burgundy-100 sm:max-w-[460px] lg:max-w-[500px]"
-          >
+          </div>
+          <div className="relative mx-auto max-w-[420px] overflow-hidden rounded-3xl bg-white/70 shadow-2xl ring-1 ring-brand-burgundy-100 sm:max-w-[460px] lg:max-w-[500px]">
             <div className="relative aspect-[4/5]">
               <Image
                 src="/mark-profile.jpg"
@@ -73,15 +62,11 @@ export default function AboutPage() {
                 priority
               />
             </div>
-          </MotionDiv>
+          </div>
         </div>
       </section>
 
-      <MotionDiv
-        {...sectionAnimation}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="border-b border-slate-200 bg-white py-16 sm:py-20 md:py-24"
-      >
+      <div className="border-b border-slate-200 bg-white py-16 sm:py-20 md:py-24">
         <div className="mx-auto max-w-5xl space-y-12 px-6">
           <div className="space-y-4">
             <h2 className="font-serif text-2xl font-bold text-slate-900 sm:text-3xl">
@@ -168,7 +153,7 @@ export default function AboutPage() {
             </Link>
           </div>
         </div>
-      </MotionDiv>
+      </div>
     </div>
   );
 }

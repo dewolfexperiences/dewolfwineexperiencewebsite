@@ -1,12 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  MotionArticle,
-  MotionDiv,
-  MotionH1,
-  MotionP,
-  MotionSection,
-} from "./components/motion";
 import { NewsletterForm } from "./components/NewsletterForm";
 
 const featuredEpisodes = [
@@ -39,11 +32,6 @@ const asSeenIn = [
 ];
 
 export default function Home() {
-  const sectionAnimation = {
-    initial: { opacity: 0, y: 20 },
-    whileInView: { opacity: 1, y: 0 },
-    transition: { duration: 0.35 },
-  };
   return (
     <>
       <section
@@ -56,53 +44,33 @@ export default function Home() {
           <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-brand-burgundy-100/50 blur-3xl" />
         </div>
         <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 md:grid-cols-[1.2fr,1fr] md:py-20">
-          <MotionDiv {...sectionAnimation} className="space-y-6">
+          <div className="space-y-6">
             <div className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-brand-burgundy-800">
               <span className="h-[2px] w-8 bg-brand-burgundy-700" />
               Wine, Food, Hospitality
             </div>
-            <MotionH1
-              {...sectionAnimation}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="font-serif text-4xl font-bold leading-tight tracking-tight text-slate-900 md:text-5xl"
-            >
+            <h1 className="font-serif text-4xl font-bold leading-tight tracking-tight text-slate-900 md:text-5xl">
               The DeWolf Wine Experience Podcast
-            </MotionH1>
-            <MotionP
-              {...sectionAnimation}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-xl font-semibold text-slate-900"
-            >
+            </h1>
+            <p className="text-xl font-semibold text-slate-900">
               The DeWolf Wine Experience is a wine and food culture podcast
               hosted by Halifax-based sommelier, writer and event creator Mark
               DeWolf. For more than two decades he has helped shape how
               Canadians experience food and wine through Eat Drink Halifax,
               DeWolf Food &amp; Wine Experiences and the Halifax International
               Wine Festival.
-            </MotionP>
-            <MotionP
-              {...sectionAnimation}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-lg leading-relaxed text-slate-900"
-            >
+            </p>
+            <p className="text-lg leading-relaxed text-slate-900">
               For Mark, wine is not just a list of flavours or a score. It is an
               experience rooted in memory, culture and the connections we share
               around the table.
-            </MotionP>
-            <MotionP
-              {...sectionAnimation}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-lg leading-relaxed text-slate-900"
-            >
+            </p>
+            <p className="text-lg leading-relaxed text-slate-900">
               Each episode uncorks the people, places and traditions behind the
               bottles we love, from Nova Scotia and Atlantic Canada to classic
               and emerging wine regions around the world.
-            </MotionP>
-            <MotionDiv
-              {...sectionAnimation}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="flex flex-wrap items-center gap-3"
-            >
+            </p>
+            <div className="flex flex-wrap items-center gap-3">
               <Link
                 href="#listen"
                 className="rounded-full bg-brand-burgundy-800 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-brand-burgundy-200 transition hover:bg-brand-burgundy-700"
@@ -115,12 +83,8 @@ export default function Home() {
               >
                 View latest episodes
               </Link>
-            </MotionDiv>
-            <MotionDiv
-              {...sectionAnimation}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              className="space-y-2"
-            >
+            </div>
+            <div className="space-y-2">
               <p className="text-sm font-semibold uppercase tracking-[0.15em] text-slate-700">
                 Listen on Apple Podcasts, Spotify, Google Podcasts, or wherever
                 you get your podcasts.
@@ -157,13 +121,9 @@ export default function Home() {
                   More platforms
                 </Link>
               </div>
-            </MotionDiv>
-          </MotionDiv>
-          <MotionDiv
-            {...sectionAnimation}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="relative"
-          >
+            </div>
+          </div>
+          <div className="relative">
             <div className="absolute -left-8 -top-8 h-24 w-24 rounded-full bg-white/60 shadow-lg" />
             <div className="relative mx-auto max-w-[380px] overflow-hidden rounded-3xl bg-white/60 shadow-2xl ring-1 ring-brand-burgundy-100 sm:max-w-[420px] lg:max-w-[460px]">
               <div className="relative aspect-[4/5]">
@@ -177,15 +137,11 @@ export default function Home() {
                 />
               </div>
             </div>
-          </MotionDiv>
+          </div>
         </div>
       </section>
 
-      <MotionSection
-        {...sectionAnimation}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        className="border-b border-slate-200 bg-white py-6"
-      >
+      <section className="border-b border-slate-200 bg-white py-6">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-6 text-sm font-semibold text-slate-700">
           <span className="flex items-center gap-2 uppercase tracking-[0.2em] text-brand-burgundy-800">
             <span className="h-[2px] w-6 bg-brand-burgundy-700" />
@@ -202,12 +158,10 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </MotionSection>
+      </section>
 
-      <MotionSection
+      <section
         id="episodes"
-        {...sectionAnimation}
-        transition={{ duration: 0.5, delay: 0.2 }}
         className="bg-white py-16 sm:py-20 md:py-24"
         aria-labelledby="featured-episodes"
       >
@@ -236,11 +190,9 @@ export default function Home() {
             </Link>
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {featuredEpisodes.map((episode, i) => (
-              <MotionArticle
+            {featuredEpisodes.map((episode) => (
+              <article
                 key={episode.title}
-                {...sectionAnimation}
-                transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
                 className="flex h-full flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="space-y-3">
@@ -266,34 +218,30 @@ export default function Home() {
                     View show notes
                   </Link>
                 </div>
-              </MotionArticle>
+              </article>
             ))}
           </div>
         </div>
-      </MotionSection>
+      </section>
 
-      <MotionSection
-        {...sectionAnimation}
-        transition={{ duration: 0.5, delay: 0.3 }}
-        className="bg-slate-900 py-16 text-white sm:py-20 md:py-24"
-      >
+      <section className="bg-white py-16 text-slate-900 sm:py-20 md:py-24">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-12 md:grid-cols-[1.1fr,0.9fr] md:items-center">
             <div className="space-y-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-burgundy-200">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-burgundy-800">
                 What the podcast is about
               </p>
               <h2 className="font-serif text-3xl font-bold leading-tight sm:text-4xl">
                 What you will hear on The DeWolf Wine Experience
               </h2>
-              <p className="text-lg text-slate-200">
+              <p className="text-lg text-slate-700">
                 The DeWolf Wine Experience is for curious wine drinkers,
                 hospitality professionals and anyone who loves the intersection
                 of wine, food, and travel.
               </p>
-              <ul className="space-y-4 text-base text-slate-100">
+              <ul className="space-y-4 text-base text-slate-800">
                 <li>
-                  <span className="font-semibold text-brand-burgundy-200">
+                  <span className="font-semibold text-brand-burgundy-800">
                     Wine regions and terroir:
                   </span>{" "}
                   conversations with winemakers, sommeliers and producers from
@@ -301,14 +249,14 @@ export default function Home() {
                   place and climate.
                 </li>
                 <li>
-                  <span className="font-semibold text-brand-burgundy-200">
+                  <span className="font-semibold text-brand-burgundy-800">
                     Food and wine pairing:
                   </span>{" "}
                   practical ideas from chef-driven dinners, restaurant programs
                   and Mark&apos;s events.
                 </li>
                 <li>
-                  <span className="font-semibold text-brand-burgundy-200">
+                  <span className="font-semibold text-brand-burgundy-800">
                     Hospitality and service culture:
                   </span>{" "}
                   insight from a former national president of the Canadian
@@ -316,7 +264,7 @@ export default function Home() {
                   storytelling and guest experience work in real life.
                 </li>
                 <li>
-                  <span className="font-semibold text-brand-burgundy-200">
+                  <span className="font-semibold text-brand-burgundy-800">
                     Travel and experiences:
                   </span>{" "}
                   stories from DeWolf Food &amp; Wine Experiences trips, Eat
@@ -325,7 +273,7 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            <div className="relative overflow-hidden rounded-3xl bg-slate-800/60 shadow-2xl ring-1 ring-white/10">
+            <div className="relative overflow-hidden rounded-3xl bg-white shadow-2xl ring-1 ring-slate-200">
               <Image
                 src="/mark-duoro.jpg"
                 alt="Mark DeWolf visiting a vineyard in the Douro Valley"
@@ -333,16 +281,14 @@ export default function Home() {
                 height={560}
                 className="h-full w-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-white/70 to-transparent" />
             </div>
           </div>
         </div>
-      </MotionSection>
+      </section>
 
-      <MotionSection
+      <section
         id="about"
-        {...sectionAnimation}
-        transition={{ duration: 0.5, delay: 0.4 }}
         className="bg-white py-16 sm:py-20 md:py-24"
         aria-labelledby="hosted-by"
       >
@@ -374,12 +320,10 @@ export default function Home() {
             Learn more about Mark
           </Link>
         </div>
-      </MotionSection>
+      </section>
 
-      <MotionSection
+      <section
         id="experiences"
-        {...sectionAnimation}
-        transition={{ duration: 0.35, delay: 0.4 }}
         className="bg-white py-16 sm:py-20 md:py-24"
         aria-labelledby="experiences-title"
       >
@@ -431,12 +375,10 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent" />
           </div>
         </div>
-      </MotionSection>
+      </section>
 
-      <MotionSection
+      <section
         id="contact"
-        {...sectionAnimation}
-        transition={{ duration: 0.5, delay: 0.6 }}
         className="bg-white py-16 sm:py-20 md:py-24"
         aria-labelledby="newsletter"
       >
@@ -465,7 +407,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </MotionSection>
+      </section>
     </>
   );
 }
