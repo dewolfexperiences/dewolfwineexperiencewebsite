@@ -121,7 +121,7 @@ export default function Home() {
                 </Link>
                 <Link
                   href="#"
-                  className="rounded-full border border-transparent px-4 py-2 text-brand-burgundy-800 transition hover:border-brand-burgundy-200 hover:bg-brand-burgundy-50"
+                  className="rounded-full bg-white px-4 py-2 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-[1px] hover:shadow"
                 >
                   More platforms
                 </Link>
