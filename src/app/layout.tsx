@@ -6,6 +6,36 @@ import "./globals.css";
 
 const socialLinks = [
   {
+    href: "https://www.youtube.com/@thedewolfwineexperience",
+    label: "YouTube",
+    icon: (
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          x="3"
+          y="4"
+          width="18"
+          height="16"
+          rx="3"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+        <path
+          d="M11 9.5v5l4-2.5-4-2.5Z"
+          fill="currentColor"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+  {
     href: "https://www.instagram.com/thedewolfwineexperience",
     label: "Instagram",
     icon: (
@@ -120,11 +150,10 @@ function SiteHeader() {
             Listen
           </Link>
           <div className="flex items-center gap-3 pl-3">
-            {socialLinks
-              .filter((item) =>
-                ["Instagram", "TikTok"].includes(item.label),
-              )
-              .map((item) => (
+            {["TikTok", "YouTube", "Instagram"].map((label) => {
+              const item = socialLinks.find((link) => link.label === label);
+              if (!item) return null;
+              return (
                 <a
                   key={item.label}
                   href={item.href}
@@ -135,7 +164,8 @@ function SiteHeader() {
                 >
                   {item.icon}
                 </a>
-              ))}
+              );
+            })}
           </div>
         </nav>
       </div>
@@ -262,20 +292,6 @@ function SiteFooter() {
             &copy; {new Date().getFullYear()} DeWolf Wine Experience. All rights
             reserved.
           </p>
-          <div className="flex flex-wrap items-center gap-3 text-sm text-slate-700">
-            {socialLinks.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 rounded-full border border-slate-200 px-3 py-2 transition hover:border-brand-burgundy-200 hover:bg-brand-burgundy-50"
-              >
-                <span className="text-slate-700">{item.icon}</span>
-                <span>{item.label}</span>
-              </a>
-            ))}
-          </div>
         </div>
       </div>
     </footer>
