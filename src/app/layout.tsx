@@ -53,7 +53,7 @@ const socialLinks = [
     ),
   },
   {
-    href: "https://www.tiktok.com/@thedewolfwineexperience",
+    href: "https://www.tiktok.com/@dewolfwineexperience",
     label: "TikTok",
     icon: (
       <svg
