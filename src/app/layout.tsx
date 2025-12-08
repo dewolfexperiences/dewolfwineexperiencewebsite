@@ -151,7 +151,7 @@ function SiteHeader() {
             Listen
           </Link>
           <div className="flex items-center gap-3 pl-3">
-            {["TikTok", "YouTube", "Instagram"].map((label) => {
+            {["YouTube", "TikTok", "Instagram"].map((label) => {
               const item = socialLinks.find((link) => link.label === label);
               if (!item) return null;
               return (
@@ -210,7 +210,7 @@ function SiteHeader() {
               </Link>
             </div>
             <div className="flex flex-wrap items-center gap-3">
-              {["TikTok", "YouTube", "Instagram"].map((label) => {
+              {["YouTube", "TikTok", "Instagram"].map((label) => {
                 const item = socialLinks.find((link) => link.label === label);
                 if (!item) return null;
                 return (
