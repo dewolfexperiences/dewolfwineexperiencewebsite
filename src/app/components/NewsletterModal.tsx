@@ -71,7 +71,8 @@ export function NewsletterModal() {
               delivered to your inbox. We only send the good stuff.
             </p>
             <p className="text-sm font-semibold uppercase tracking-[0.15em] text-slate-700">
-              Available on Apple Podcasts, Spotify and all major platforms.
+              Available on Apple Podcasts, Spotify, YouTube Music and all major
+              platforms.
             </p>
           </div>
           <div className="rounded-2xl bg-white/90 p-6 shadow-lg ring-1 ring-slate-200 backdrop-blur">

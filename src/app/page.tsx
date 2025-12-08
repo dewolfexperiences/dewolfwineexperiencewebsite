@@ -93,7 +93,7 @@ export default function Home() {
             </div>
             <div className="space-y-2">
               <p className="text-sm font-semibold uppercase tracking-[0.15em] text-slate-700">
-                Listen on Apple Podcasts, Spotify, Google Podcasts, or wherever
+                Listen on Apple Podcasts, Spotify, YouTube Music, or wherever
                 you get your podcasts.
               </p>
               <div className="flex flex-wrap items-center gap-3 text-sm font-semibold text-slate-800">
@@ -114,12 +114,12 @@ export default function Home() {
                   Spotify
                 </Link>
                 <Link
-                  href="https://podcasts.google.com"
+                  href="https://music.youtube.com/@thedewolfwineexperience"
                   target="_blank"
                   rel="noreferrer"
                   className="rounded-full bg-white px-4 py-2 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-[1px] hover:shadow"
                 >
-                  Google Podcasts
+                  YouTube Music
                 </Link>
                 <Link
                   href="#"
@@ -404,7 +404,8 @@ export default function Home() {
                   delivered to your inbox.
                 </p>
                 <p className="text-sm font-semibold uppercase tracking-[0.15em] text-slate-700">
-                  Available on Apple Podcasts, Spotify and all major platforms.
+                  Available on Apple Podcasts, Spotify, YouTube Music and all
+                  major platforms.
                 </p>
               </div>
               <NewsletterForm />

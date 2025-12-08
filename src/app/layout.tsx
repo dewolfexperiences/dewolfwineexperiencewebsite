@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { StickyPlayer } from "./components/StickyPlayer";
 
 const socialLinks = [
   {
@@ -252,6 +253,30 @@ function SiteFooter() {
               DeWolf Wine Experience is recorded in Halifax, Nova Scotia and
               available wherever you get your podcasts.
             </p>
+            <a
+              href="https://dewolfexperiences.com"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-brand-burgundy-800 transition hover:text-brand-burgundy-700"
+            >
+              Visit dewolfexperiences.com
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M7 17 17 7M9 7h8v8"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </a>
             <div className="flex flex-wrap items-center gap-3 text-sm text-slate-700">
               {socialLinks.map((item) => (
                 <a
@@ -369,7 +394,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} bg-brand-burgundy-50 font-sans text-slate-900 antialiased`}
       >
         <SiteHeader />
-        <main className="min-h-screen">{children}</main>
+        <main className="min-h-screen pb-32">{children}</main>
+        <StickyPlayer />
         <SiteFooter />
       </body>
     </html>
