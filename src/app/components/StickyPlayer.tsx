@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const defaultEmbedSrc =
   process.env.NEXT_PUBLIC_PLAYER_EMBED_SRC ||
@@ -19,10 +19,44 @@ const platformLinks = [
 export function StickyPlayer() {
   const [mounted, setMounted] = useState(false);
   const [collapsed, setCollapsed] = useState(false);
+  const footerVisibleRef = useRef(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
+    const handleScroll = () => {
+      if (!footerVisibleRef.current) {
+        setCollapsed(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [mounted]);
+
+  useEffect(() => {
+    if (!mounted) return;
+    const footer = document.getElementById("site-footer");
+    if (!footer) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const isVisible = entries.some((entry) => entry.isIntersecting);
+        footerVisibleRef.current = isVisible;
+        if (isVisible) {
+          setCollapsed(false);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(footer);
+    return () => observer.disconnect();
+  }, [mounted]);
 
   if (!mounted) return null;
 
@@ -49,11 +83,11 @@ export function StickyPlayer() {
                 ))}
               </div>
             </div>
-            <button
-              type="button"
-              onClick={() => setCollapsed((prev) => !prev)}
-              className="inline-flex items-center gap-2 self-start rounded-full border border-white/20 px-3 py-2 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/10 sm:self-center"
-              aria-label={collapsed ? "Expand player" : "Collapse player"}
+              <button
+                type="button"
+                onClick={() => setCollapsed((prev) => !prev)}
+                className="inline-flex items-center gap-2 self-start rounded-full border border-white/20 px-3 py-2 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/10 sm:self-center"
+                aria-label={collapsed ? "Expand player" : "Collapse player"}
             >
               {collapsed ? "Show player" : "Hide player"}
               <svg

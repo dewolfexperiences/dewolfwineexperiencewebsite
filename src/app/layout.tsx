@@ -236,7 +236,7 @@ function SiteHeader() {
 
 function SiteFooter() {
   return (
-    <footer className="border-t border-slate-200 bg-white">
+    <footer id="site-footer" className="border-t border-slate-200 bg-white">
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="grid gap-12 md:grid-cols-4">
           <div className="space-y-4 md:col-span-1">
