@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { NewsletterForm } from "./components/NewsletterForm";
+import { NewsletterModal } from "./components/NewsletterModal";
 
 const featuredEpisodes = [
   {
@@ -34,6 +35,7 @@ const asSeenIn = [
 export default function Home() {
   return (
     <>
+      <NewsletterModal />
       <section
         id="listen"
         className="relative overflow-hidden bg-white"

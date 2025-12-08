@@ -4,7 +4,11 @@ import { useState } from "react";
 
 type FormState = "idle" | "submitting" | "success" | "error";
 
-export function NewsletterForm() {
+type NewsletterFormProps = {
+  onSuccess?: () => void;
+};
+
+export function NewsletterForm({ onSuccess }: NewsletterFormProps) {
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<FormState>("idle");
@@ -35,6 +39,7 @@ export function NewsletterForm() {
       setStatus("success");
       setFirstName("");
       setEmail("");
+      onSuccess?.();
     } else {
       const data = (await response.json().catch(() => null)) as
         | { error?: string }
@@ -112,22 +117,40 @@ export function NewsletterForm() {
         <span>or</span>
         <div className="h-px flex-1 bg-slate-200" />
       </div>
-      <div className="flex flex-wrap gap-3 text-sm font-semibold text-brand-burgundy-800">
+      <div className="flex flex-wrap items-center gap-3 text-sm font-semibold text-brand-burgundy-800">
         <a
-          href="https://www.instagram.com"
+          href="https://www.youtube.com/@thedewolfwineexperience"
           target="_blank"
           rel="noreferrer"
-          className="rounded-full bg-white px-4 py-2 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-[1px] hover:shadow"
+          className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-[1px] hover:shadow"
         >
-          Instagram
-        </a>
-        <a
-          href="https://www.linkedin.com"
-          target="_blank"
-          rel="noreferrer"
-          className="rounded-full bg-white px-4 py-2 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-[1px] hover:shadow"
-        >
-          LinkedIn
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            className="text-slate-800"
+          >
+            <rect
+              x="3"
+              y="4"
+              width="18"
+              height="16"
+              rx="3"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            />
+            <path
+              d="M11 9.5v5l4-2.5-4-2.5Z"
+              fill="currentColor"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          <span>YouTube</span>
         </a>
         <a
           href="mailto:info@thedewolfwineexperience.com"
