@@ -107,6 +107,7 @@ const playfairDisplay = Playfair_Display({
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/#episodes", label: "Episodes" },
+  { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
   { href: "/#experiences", label: "Experiences" },
   { href: "/#contact", label: "Contact" },
@@ -303,6 +304,12 @@ function SiteFooter() {
                 className="transition hover:text-brand-burgundy-700"
               >
                 Episodes
+              </Link>
+              <Link
+                href="/blog"
+                className="transition hover:text-brand-burgundy-700"
+              >
+                Blog
               </Link>
               <Link
                 href="/#experiences"

@@ -1,0 +1,42 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff7f4"/>
+      <stop offset="50%" stop-color="#ffe9d0"/>
+      <stop offset="100%" stop-color="#f3d0c7"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f3a87a" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#8b3030" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="bottle" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff6e9"/>
+      <stop offset="100%" stop-color="#d9b28c"/>
+    </linearGradient>
+    <radialGradient id="sparkle" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#ffd79f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <circle cx="280" cy="160" r="120" fill="url(#sparkle)" opacity="0.7"/>
+  <circle cx="1020" cy="220" r="150" fill="url(#sparkle)" opacity="0.5"/>
+  <g opacity="0.45">
+    <path d="M0 430C200 390 320 370 480 390C660 415 820 465 1020 450C1090 445 1145 430 1200 415V675H0V430Z" fill="url(#wave)"/>
+    <path d="M0 500C200 470 340 455 500 470C700 490 870 540 1050 530C1115 525 1165 510 1200 495V675H0V500Z" fill="#8b3030" opacity="0.55"/>
+  </g>
+  <g transform="translate(520 140)">
+    <path d="M60 0H120C136 0 148 12 148 28V92C148 100 146 108 142 115L119 157C117 161 116 166 116 171V325C116 344 101 360 82 360H98C79 360 64 344 64 325V171C64 166 63 161 61 157L38 115C34 108 32 100 32 92V28C32 12 44 0 60 0Z" fill="#f7f2ec" stroke="#8b3030" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M64 62H116V92C116 99.7 114.1 107.3 110.7 114.1L98 140H82L69.3 114.1C65.9 107.3 64 99.7 64 92V62Z" fill="url(#bottle)" stroke="#8b3030" stroke-width="3"/>
+    <rect x="70" y="18" width="40" height="18" rx="6" fill="#8b3030"/>
+    <rect x="78" y="-12" width="24" height="18" rx="4" fill="#f7f2ec" stroke="#8b3030" stroke-width="3"/>
+    <circle cx="90" cy="210" r="54" fill="url(#sparkle)" opacity="0.55"/>
+  </g>
+  <g opacity="0.5">
+    <circle cx="150" cy="350" r="8" fill="#ffffff"/>
+    <circle cx="180" cy="390" r="12" fill="#ffffff"/>
+    <circle cx="980" cy="360" r="10" fill="#ffffff"/>
+    <circle cx="1040" cy="400" r="14" fill="#ffffff"/>
+    <circle cx="930" cy="310" r="7" fill="#ffffff"/>
+  </g>
+</svg>

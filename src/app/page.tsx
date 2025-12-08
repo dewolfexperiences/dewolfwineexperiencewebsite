@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getSortedPosts } from "./blog/posts";
 import { NewsletterForm } from "./components/NewsletterForm";
 import { NewsletterModal } from "./components/NewsletterModal";
 
@@ -29,8 +30,10 @@ const asSeenIn = [
   "Association de la Sommellerie Internationale",
   "Eat Drink Halifax",
   "SaltWire",
-  "The Coast",
+      "The Coast",
 ];
+
+const latestBlogPosts = getSortedPosts().slice(0, 3);
 
 export default function Home() {
   return (
@@ -227,6 +230,101 @@ export default function Home() {
                   >
                     View show notes
                   </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="blog"
+        className="relative overflow-hidden bg-white py-16 sm:py-20 md:py-24"
+        aria-labelledby="latest-blog"
+      >
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -left-24 top-10 h-64 w-64 rounded-full bg-brand-gold-100/60 blur-3xl" />
+          <div className="absolute right-0 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-brand-burgundy-100/50 blur-3xl" />
+        </div>
+        <div className="relative mx-auto max-w-6xl px-6">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-burgundy-800">
+                Latest on the blog
+              </p>
+              <h2
+                id="latest-blog"
+                className="mt-2 font-serif text-3xl font-bold text-slate-900 sm:text-4xl"
+              >
+                Episode synopses &amp; show notes
+              </h2>
+              <p className="mt-3 max-w-2xl text-lg text-slate-700">
+                Quick-read synopses of each podcast episode with keywords,
+                pairing notes and a direct link to listen.
+              </p>
+            </div>
+            <Link
+              href="/blog"
+              className="text-sm font-semibold text-brand-burgundy-800 transition hover:text-brand-burgundy-700"
+            >
+              View the blog &rarr;
+            </Link>
+          </div>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {latestBlogPosts.map((post) => (
+              <article
+                key={post.slug}
+                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+              >
+                <div className="relative h-40 w-full overflow-hidden bg-brand-burgundy-50">
+                  <Image
+                    src={post.heroImage}
+                    alt={post.heroImageAlt}
+                    fill
+                    className="object-cover transition duration-500 group-hover:scale-105"
+                    sizes="(min-width: 1024px) 320px, (min-width: 768px) 33vw, 100vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/60 to-transparent" />
+                </div>
+                <div className="flex flex-1 flex-col gap-3 p-6">
+                  <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.15em] text-slate-700">
+                    <span className="rounded-full bg-brand-burgundy-50 px-3 py-1 text-brand-burgundy-800">
+                      {post.tags[0]}
+                    </span>
+                    <span className="text-slate-600">
+                      {new Date(post.date).toLocaleDateString("en-CA", {
+                        month: "short",
+                        day: "numeric",
+                        year: "numeric",
+                      })}
+                    </span>
+                    <span className="text-slate-500">{post.readTime}</span>
+                  </div>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="group-hover:text-brand-burgundy-800"
+                  >
+                    <h3 className="text-xl font-semibold text-slate-900">
+                      {post.title}
+                    </h3>
+                  </Link>
+                  <p className="text-slate-700">{post.excerpt}</p>
+                  <div className="mt-auto flex flex-wrap items-center gap-3 text-sm font-semibold text-brand-burgundy-800">
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="flex items-center gap-2 rounded-full bg-brand-burgundy-800 px-4 py-2 text-white transition hover:bg-brand-burgundy-700"
+                    >
+                      Read synopsis
+                    </Link>
+                    <a
+                      href={post.podcastUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-2 text-brand-burgundy-800 transition hover:text-brand-burgundy-700"
+                    >
+                      ▶ Listen to episode
+                    </a>
+                  </div>
                 </div>
               </article>
             ))}

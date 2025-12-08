@@ -17,17 +17,10 @@ const platformLinks = [
 ];
 
 export function StickyPlayer() {
-  const [mounted, setMounted] = useState(false);
   const [collapsed, setCollapsed] = useState(false);
   const footerVisibleRef = useRef(false);
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!mounted) return;
-
     const handleScroll = () => {
       if (!footerVisibleRef.current) {
         setCollapsed(true);
@@ -36,10 +29,9 @@ export function StickyPlayer() {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [mounted]);
+  }, []);
 
   useEffect(() => {
-    if (!mounted) return;
     const footer = document.getElementById("site-footer");
     if (!footer) return;
 
@@ -56,9 +48,7 @@ export function StickyPlayer() {
 
     observer.observe(footer);
     return () => observer.disconnect();
-  }, [mounted]);
-
-  if (!mounted) return null;
+  }, []);
 
   return (
     <div className="fixed inset-x-0 bottom-0 z-40">
