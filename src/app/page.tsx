@@ -283,13 +283,13 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            <div className="relative mx-auto overflow-hidden rounded-3xl bg-transparent shadow-none sm:max-w-[520px] lg:max-w-[560px]">
+            <div className="relative mx-auto overflow-hidden rounded-3xl bg-transparent shadow-none sm:max-w-[520px] lg:max-w-[560px] aspect-[4/3]">
               <Image
                 src="/mark-duoro.jpg"
                 alt="Mark DeWolf visiting a vineyard in the Douro Valley"
-                width={700}
-                height={560}
-                className="h-full w-full object-cover"
+                width={800}
+                height={600}
+                className="h-full w-full object-cover scale-105"
               />
             </div>
           </div>
