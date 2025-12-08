@@ -250,7 +250,7 @@ function SiteFooter() {
               />
             </div>
             <p className="text-sm text-slate-600 leading-relaxed max-w-sm">
-              DeWolf Wine Experience is recorded in Halifax, Nova Scotia and
+              The DeWolf Wine Experience is recorded in Halifax, Nova Scotia and
               available wherever you get your podcasts.
             </p>
             <a

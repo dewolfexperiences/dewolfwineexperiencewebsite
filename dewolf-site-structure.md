@@ -48,7 +48,7 @@ Button: Join the list.
 
 7) Footer  
 Small logo; links to Home, Episodes, About, Experiences, Contact.  
-Short line: DeWolf Wine Experience is recorded in Halifax, Nova Scotia and available wherever you get your podcasts.
+Short line: The DeWolf Wine Experience is recorded in Halifax, Nova Scotia and available wherever you get your podcasts.
 
 ## About Page Structure
 - H1: About Mark DeWolf  

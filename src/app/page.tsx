@@ -72,6 +72,10 @@ export default function Home() {
               bottles we love, from Nova Scotia and Atlantic Canada to classic
               and emerging wine regions around the world.
             </p>
+            <p className="text-sm font-semibold text-slate-800">
+              The DeWolf Wine Experience is recorded in Halifax, Nova Scotia and
+              available wherever you get your podcasts.
+            </p>
             <div className="flex flex-wrap items-center gap-3">
               <Link
                 href="#listen"
