@@ -135,12 +135,12 @@ export default function Home() {
             </div>
           </div>
           <div className="relative">
-            <div className="relative mx-auto max-w-[380px] overflow-hidden rounded-3xl bg-white/60 shadow-2xl ring-1 ring-brand-burgundy-100 sm:max-w-[420px] lg:max-w-[460px]">
-              <div className="relative aspect-[4/5]">
-                <Image
-                  src="/mark-profile.jpg"
-                  alt="Sommelier Mark DeWolf enjoying wine in Halifax"
-                  fill
+          <div className="relative mx-auto max-w-[380px] overflow-hidden rounded-3xl bg-white/60 shadow-2xl sm:max-w-[420px] lg:max-w-[460px]">
+            <div className="relative aspect-[4/5]">
+              <Image
+                src="/mark-profile.jpg"
+                alt="Sommelier Mark DeWolf enjoying wine in Halifax"
+                fill
                   className="object-cover"
                   sizes="(min-width: 1024px) 460px, (min-width: 640px) 420px, 90vw"
                   priority
@@ -283,7 +283,7 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            <div className="relative overflow-hidden rounded-3xl bg-white/60 shadow-2xl ring-1 ring-brand-burgundy-100 sm:max-w-[520px] lg:max-w-[560px]">
+            <div className="relative mx-auto overflow-hidden rounded-3xl bg-white/60 shadow-2xl sm:max-w-[520px] lg:max-w-[560px]">
               <Image
                 src="/mark-duoro.jpg"
                 alt="Mark DeWolf visiting a vineyard in the Douro Valley"
