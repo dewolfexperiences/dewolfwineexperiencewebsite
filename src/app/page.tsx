@@ -283,7 +283,7 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            <div className="relative mx-auto overflow-hidden rounded-3xl bg-white/60 shadow-2xl sm:max-w-[520px] lg:max-w-[560px]">
+            <div className="relative mx-auto overflow-hidden rounded-3xl bg-transparent shadow-none sm:max-w-[520px] lg:max-w-[560px]">
               <Image
                 src="/mark-duoro.jpg"
                 alt="Mark DeWolf visiting a vineyard in the Douro Valley"
