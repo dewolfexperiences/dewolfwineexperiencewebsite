@@ -8,8 +8,8 @@ const defaultEmbedSrc =
   "https://www.youtube.com/embed?listType=search&list=DeWolf%20Wine%20Experience%20Podcast";
 
 const platformLinks = [
-  { label: "Apple Podcasts", href: "https://podcasts.apple.com" },
   { label: "Spotify", href: "https://open.spotify.com" },
+  { label: "Apple Podcasts", href: "https://podcasts.apple.com" },
   {
     label: "YouTube Music",
     href: "https://music.youtube.com/@thedewolfwineexperience",

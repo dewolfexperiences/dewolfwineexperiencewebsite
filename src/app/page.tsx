@@ -97,18 +97,10 @@ export default function Home() {
             </div>
             <div className="space-y-2">
               <p className="text-sm font-semibold uppercase tracking-[0.15em] text-slate-700">
-                Listen on Apple Podcasts, Spotify, YouTube Music, or wherever
+                Listen on Spotify, Apple Podcasts, YouTube Music, or wherever
                 you get your podcasts.
               </p>
               <div className="flex flex-wrap items-center gap-3 text-sm font-semibold text-slate-800">
-                <Link
-                  href="https://podcasts.apple.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded-full bg-white px-4 py-2 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-[1px] hover:shadow"
-                >
-                  Apple Podcasts
-                </Link>
                 <Link
                   href="https://open.spotify.com"
                   target="_blank"
@@ -116,6 +108,14 @@ export default function Home() {
                   className="rounded-full bg-white px-4 py-2 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-[1px] hover:shadow"
                 >
                   Spotify
+                </Link>
+                <Link
+                  href="https://podcasts.apple.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-full bg-white px-4 py-2 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-[1px] hover:shadow"
+                >
+                  Apple Podcasts
                 </Link>
                 <Link
                   href="https://music.youtube.com/@thedewolfwineexperience"
@@ -408,7 +408,7 @@ export default function Home() {
                   delivered to your inbox.
                 </p>
                 <p className="text-sm font-semibold uppercase tracking-[0.15em] text-slate-700">
-                  Available on Apple Podcasts, Spotify, YouTube Music and all
+                  Available on Spotify, Apple Podcasts, YouTube Music and all
                   major platforms.
                 </p>
               </div>
