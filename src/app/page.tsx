@@ -373,12 +373,12 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="relative mx-auto max-w-[420px] overflow-hidden rounded-3xl bg-white shadow-2xl sm:max-w-[520px] lg:max-w-[560px] aspect-[4/5]">
+          <div className="relative mx-auto max-w-[480px] overflow-hidden rounded-3xl bg-white shadow-2xl sm:max-w-[600px] lg:max-w-[680px] aspect-[4/5]">
             <Image
               src="/mark-itc.jpg"
               alt="Mark DeWolf leading a tasting at the International Tasting Centre"
-              width={700}
-              height={875}
+              width={820}
+              height={1025}
               className="h-full w-full object-cover"
             />
           </div>
